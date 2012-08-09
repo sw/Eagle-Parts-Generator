@@ -287,12 +287,12 @@ class App:
         # Scale Part
         try:
             if (partUI.innerPins.get() == True):
-                if (2*centerX-partUI.width.get() < 2*centerY-partUI.length.get()):
+                if (partUI.width.get()/(2*centerX) > partUI.length.get()/(2*centerY)):
                     zoom = ratio*2*centerX/(partUI.width.get()+2*partUI.smdPadOffset.get())
                 else:
                     zoom = ratio*2*centerY/(partUI.length.get()+2*partUI.smdPadOffset.get())
             else:
-                if (2*centerX-(partUI.width.get()+2*partUI.pinLength.get()) < 2*centerY-(partUI.length.get()+2*partUI.pinLength.get())):
+                if ((partUI.width.get()+2*partUI.pinLength.get())/(2*centerX) > (partUI.length.get()+2*partUI.pinLength.get())/(2*centerY)):
                     zoom = ratio*2*centerX/(partUI.width.get()+2*partUI.pinLength.get())
                 else:
                     zoom = ratio*2*centerY/(partUI.length.get()+2*partUI.pinLength.get())
