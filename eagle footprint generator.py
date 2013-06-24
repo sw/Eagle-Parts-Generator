@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # Made by Cruz Monrreal II
 # Last modified: 09:15pm, 05/31/2012
 # Copyright CC-By-SA
@@ -6,6 +7,7 @@
 from Tkinter import *
 from ttk import *
 from xml.dom.minidom import Document
+import os
 
 class Part:
     def __init__(self, width, length, pinWidth, pinLength, pinPitch, pinCountY, pinCountX, smdPadWidth, smdPadLength, smdPadOffset, thermalPadWidth, thermalPadLength, innerPins):
@@ -244,7 +246,7 @@ class App:
 
     ## Part Image  ##
         
-        self.gif = PhotoImage(file = "images\qfp.gif")
+        self.gif = PhotoImage(file = os.path.join("images","qfp.gif"))
         self.img.create_image(0, 0, image = self.gif, anchor=NW)
         
     def updateCanvas(self, event):
